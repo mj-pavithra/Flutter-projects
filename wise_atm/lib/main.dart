@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:wise_atm/screens/login.dart';
 import 'package:wise_atm/screens/splash.dart';
 
 void main() {
-  runApp(MaterialApp(home: Splash()));
+  runApp(MaterialApp(
+      home: Splash(),
+      routes:{
+        '/splash':(context) => Splash(),
+        '/login':(context) => LogIn(),
+      } ,
+  )
+  );
 }
 
 class HomePage extends StatelessWidget {

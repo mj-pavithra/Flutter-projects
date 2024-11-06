@@ -14,7 +14,7 @@ class _DotLoadingIndicatorState extends State<DotLoadingIndicator>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 1200),
+      duration:const Duration(milliseconds: 1200),
     )..repeat();
   }
 
@@ -33,7 +33,7 @@ class _DotLoadingIndicatorState extends State<DotLoadingIndicator>
           animation: _controller,
           builder: (context, child) {
             return Container(
-              margin: EdgeInsets.symmetric(horizontal: 4.0),
+              margin: const EdgeInsets.symmetric(horizontal: 4.0),
               width: 10.0,
               height: 10.0,
               decoration: BoxDecoration(

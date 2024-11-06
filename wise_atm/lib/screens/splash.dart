@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:wise_atm/components/blueBigbutton.dart';
 import 'package:wise_atm/components/stepperDots.dart';
+
 
 class Splash extends StatelessWidget {
   const Splash({super.key});
@@ -8,6 +10,7 @@ class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Container(
         alignment: Alignment.center,
         color: Colors.white,
@@ -45,14 +48,14 @@ class Splash extends StatelessWidget {
               margin: const EdgeInsets.only(top: 100),
               child: const Column(
                 children: [
-                  const Text(
+                   Text(
                     'Manage your Institute ',
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 24,
                         fontWeight: FontWeight.w900),
                   ),
-                  const Text(
+                   Text(
                     'preciously',
                     style: TextStyle(
                         color: Colors.black,
@@ -70,32 +73,36 @@ class Splash extends StatelessWidget {
                   DotLoadingIndicator(),
                   Container(
                     margin: const EdgeInsets.only(top: 20),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.white,
-                        backgroundColor: Color.fromRGBO(46, 90, 240, 1),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20.0),
-                        ),
-                      ),
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/register');
-                      },
-                      child: const Text('Create Account',
-                          style: TextStyle(
-                            fontSize: 16,
-                          )),
-                    ),
+                    child: BlueBigButton(text: "Create account", onPressed: () {
+                      Navigator.pushNamed(context, '/register');
+                      print("Create Account button is pressed");
+                    },),
+                    // child: ElevatedButton(
+                    //   style: ElevatedButton.styleFrom(
+                    //     foregroundColor: Colors.white,
+                    //     backgroundColor: Color.fromRGBO(46, 90, 240, 1),
+                    //     shape: RoundedRectangleBorder(
+                    //       borderRadius: BorderRadius.circular(20.0),
+                    //     ),
+                    //   ),
+                    //   onPressed: () {
+                    //     Navigator.pushNamed(context, '/register');
+                    //   },
+                    //   child: const Text('Create Account',
+                    //       style: TextStyle(
+                    //         fontSize: 16,
+                    //       )),
+                    // ),
                   ),
-                  const Row(
+                   Row(
                     children: [
-                      Text('Have an account?'),
-                      Text(
-                        ' Log in',
-                        style: TextStyle(
-                            color: Color.fromRGBO(46, 90, 240, 1),
-                            fontSize: 16),
-                      )
+                      const Text('Have an account?'),
+                      TextButton(onPressed: ()
+                          {
+                            Navigator.pushNamed(context, '/login');
+                            print("Login button is pressed");
+                          },
+                          child: const Text("Login"))
                     ],
                   ),
                 ],
