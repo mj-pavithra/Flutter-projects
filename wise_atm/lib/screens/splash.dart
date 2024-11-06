@@ -76,7 +76,8 @@ class Splash extends StatelessWidget {
                     child: BlueBigButton(text: "Create account", onPressed: () {
                       Navigator.pushNamed(context, '/register');
                       print("Create Account button is pressed");
-                    },),
+                    },
+                    isActive: true,),
                     // child: ElevatedButton(
                     //   style: ElevatedButton.styleFrom(
                     //     foregroundColor: Colors.white,

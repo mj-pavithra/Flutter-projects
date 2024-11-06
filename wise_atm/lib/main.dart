@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:wise_atm/screens/login.dart';
 import 'package:wise_atm/screens/splash.dart';
+import 'package:wise_atm/screens/verification.dart';
+
 
 void main() {
   runApp(MaterialApp(
       home: Splash(),
       routes:{
-        '/splash':(context) => Splash(),
-        '/login':(context) => LogIn(),
+        // '/splash':(context) => const Splash(),
+        '/login':(context) => const LogIn(),
+        '/verification':(context) => const Verification(),
       } ,
   )
   );

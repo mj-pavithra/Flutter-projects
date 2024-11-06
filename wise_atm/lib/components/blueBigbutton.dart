@@ -5,21 +5,25 @@ class BlueBigButton extends StatelessWidget{
 
   final String text;
   final VoidCallback onPressed;
+  final bool isActive ;
 
   const BlueBigButton({
     super.key,
     required this.text,
-    required this.onPressed
+    required this.onPressed,
+    required this.isActive
 
   });
+
 
   @override
   Widget build(BuildContext context) {
     return
     ElevatedButton(
       style: ElevatedButton.styleFrom(
+        minimumSize: const Size(200,40),
         foregroundColor: Colors.white,
-        backgroundColor: Color.fromRGBO(46, 90, 240, 1),
+        backgroundColor: isActive? const Color.fromRGBO(46, 90, 240, 1):Colors.grey,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.0),
         ),
@@ -27,7 +31,7 @@ class BlueBigButton extends StatelessWidget{
       onPressed: onPressed,
       child: Text(
           text,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 16,
           )),
     );

@@ -10,6 +10,7 @@ class LogIn extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(),
       body: Container(
+        padding: const EdgeInsets.all(20),
         alignment: Alignment.center,
         color: Colors.white,
         child: Column(
@@ -31,7 +32,7 @@ class LogIn extends StatelessWidget{
             ),
             const Text('You may receive an SMS verification that may apply message and data rates',
               style: TextStyle(
-                color: Colors.black12,
+                color: Colors.black38,
 
               ),
             ),
@@ -40,7 +41,8 @@ class LogIn extends StatelessWidget{
                 children: [
                   BlueBigButton(text: "Continue", onPressed: (){
                     Navigator.pushNamed(context, '/verification');
-                  })
+                  },
+                    isActive: true,)
                 ],
               ),
             )
